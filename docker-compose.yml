@@ -1,0 +1,10 @@
+services:
+  cloudflare-ip-checker:
+    image: ghcr.io/thooradam/cloudflare-ip-checker:latest
+    container_name: cloudflare-ip-checker
+    restart: unless-stopped
+    environment:
+      - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
+      - CLOUDFLARE_ZONE_ID=${CLOUDFLARE_ZONE_ID}
+      - CLOUDFLARE_ALLOWED_RECORDS=${CLOUDFLARE_ALLOWED_RECORDS}
+      - CHECK_INTERVAL_MINUTES=${CHECK_INTERVAL_MINUTES}

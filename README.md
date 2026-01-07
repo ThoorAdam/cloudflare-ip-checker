@@ -28,6 +28,12 @@ Continuously monitors your server's public IP address and automatically updates 
 
 ```bash
 bun run index.ts
+
+# Using Docker
+docker run --env-file .env ghcr.io/thooradam/cloudflare-ip-checker
+ 
+# Using Docker Compose
+docker compose up
 ```
 
 The script will run continuously, checking for IP changes at the configured interval.
@@ -44,6 +50,12 @@ bun run index.ts
 
 # Using systemd (create service file)
 sudo systemctl start cloudflare-ip-checker
+
+# Using Docker
+docker run -d --env-file .env ghcr.io/thooradam/cloudflare-ip-checker
+
+# Using Docker Compose
+docker compose up -d
 ```
 
 ## Example Output
